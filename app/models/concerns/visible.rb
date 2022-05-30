@@ -17,4 +17,3 @@ module Visible
     status == 'archived'
   end
 end
-  
