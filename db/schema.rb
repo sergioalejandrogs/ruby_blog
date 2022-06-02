@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_26_054605) do
+ActiveRecord::Schema[7.0].define(version: 2022_05_30_064817) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -22,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_26_054605) do
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
     t.text "body"
-    t.integer "article_id", null: false
+    t.bigint "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
