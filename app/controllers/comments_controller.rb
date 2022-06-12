@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   
-  http_basic_authenticate_with name: "sergio", password: "pass",
+  http_basic_authenticate_with name: ENV["NAME"], password: ENV["PASSWORD"],
     only: :destroy
 
   def create
