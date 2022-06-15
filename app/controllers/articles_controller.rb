@@ -11,11 +11,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  def new 
+  def new
     @article = Article.new
   end
 
-  def create 
+  def create
     @article = Article.new(article_params)
 
     if @article.save
@@ -28,7 +28,7 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
   end
-  
+
   def update
     @article = Article.find(params[:id])
 
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
-  private 
+  private
     def article_params
       params.require(:article).permit(:title, :body, :status)
     end
