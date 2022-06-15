@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  
+
   http_basic_authenticate_with name: "sergio", password: "pass",
     except: [:indes, :show]
 
@@ -18,11 +18,11 @@ class ArticlesController < ApplicationController
   def create 
     @article = Article.new(article_params)
 
-      if @article.save
-        redirect_to @article
-      else
-        render :new, status: :unprocessable_entity
-      end
+    if @article.save
+      redirect_to @article
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
