@@ -4,14 +4,18 @@ class FriendshipsController < ApplicationController
   before_action :find_user
 
   def create
-    current_user.follow(@user)
-    @article = Article.find(params[:article_id])
+    if current_user != @user
+      current_user.follow(@user)
+      @article = Article.find(params[:article_id])
+    end
     redirect_to @article
   end
   
   def destroy 
-    current_user.unfollow(@user)
-    @article = Article.find(params[:article_id])
+    if current_user != @user
+      current_user.unfollow(@user)
+      @article = Article.find(params[:article_id])
+    end
     redirect_to @article
   end
 
