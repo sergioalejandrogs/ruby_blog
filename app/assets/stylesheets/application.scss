@@ -1,0 +1,19 @@
+@import "bootstrap";
+
+h1 {
+    text-align: center;
+}
+
+.bg-head{
+    background-color: #34495e;
+}
+
+footer{
+    position: absolute;
+    height: 80px;
+    width: 100%;
+    background-color: #212529;
+    color: whitesmoke;
+    bottom: 0;
+    text-align: center;
+}

@@ -1,7 +1,9 @@
+<%= render "header" %>
+
 <h1>New Article</h1>
 
 <%= render "form", article: @article %>
 
-<p>
-  <%= link_to "Back", articles_path %>
-</p>
+<%= link_to "Back", articles_path, class: "btn btn-dark" %>
+
+<%= render "footer" %>
