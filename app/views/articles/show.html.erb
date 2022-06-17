@@ -1,5 +1,6 @@
 <%= render "header" %>
 
+<div class="article bg-light mt-5 rounded shadow">
 <h1><%= @article.title %></h1><br>
 
 <span>Posted by <%= link_to @user.email %></span>
@@ -27,10 +28,11 @@
                       class: "btn btn-danger btn-sm" %>
   <% end %>
 <% end %>
+</div>
 
 <br><br>
 <div class="container">
-  <h3>Comments</h2>
+  <h3>Comments:</h2>
   <%= render @article.comments %>
 
   <% if user_signed_in? %> 
