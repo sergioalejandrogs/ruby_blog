@@ -1,0 +1,34 @@
+<div style="position: relative; min-height: 100vh;">
+        <div style="padding-bottom: 3rem;">
+            <div class="bg-head">
+                <div class="container bg-head">  
+                    <nav class="navbar navbar-expand navbar-dark bg-head">
+                        <div class="nav navbar-nav">
+                            <%= link_to "Home", root_path, class: "nav-item nav-link active" %>
+                        </div>
+                        <div class="nav navbar-nav">
+                            <%= link_to "Articles", root_path, class: "nav-item nav-link" %>
+                        </div>
+                        <div class="ms-auto">
+                            <ul class="navbar-nav ms-auto">
+                            <% if user_signed_in? %>
+                                    <li class="nav-item">
+                                        <p class="nav-item nav-link">Logged in as <%= current_user.email %></p>
+                                    </li>
+                                    <li class="nav-item">
+                                        <%= link_to "Sign Out", destroy_user_session_path, data: {
+                    turbo_method: :delete}, class: "nav-item nav-link" %>
+                                </ul>
+                            <% else %>
+                                <ul class="navbar-nav ms-auto">
+                                    <li class="nav-item">
+                                        <%= link_to "Sign In", new_user_session_path, class: "nav-link" %>
+                                    </li>
+                                </ul>                             
+                            <% end %>
+                        </div>
+                    </nav>  
+                </div>
+            </div>
+        </div>
+<div class="container">

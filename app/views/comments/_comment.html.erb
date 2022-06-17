@@ -1,4 +1,5 @@
 <% unless comment.archived? %>
+  <div class="container w-75 bg-light mt-5 rounded shadow" style="padding: 10px;">
   <p>
     <strong>Commenter:</strong>
     <%= comment.commenter %>
@@ -9,11 +10,16 @@
     <%= comment.body %>
   </p>
 
-  <p>
-    <%= link_to "Delete Comment", [comment.article, comment], data: {
-                turbo_method: :delete,
-                turbo_confirm: "Are you sure?"
-              },
-              class: "btn btn-danger" %>
-  </p>
+  <% if user_signed_in? %>
+    <% if current_user.id == comment.user_id %>
+      <p>
+        <%= link_to "Delete Comment", [comment.article, comment], data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  },
+                  class: "btn btn-danger btn-sm" %>
+      </p>
+    <% end %>
+  <% end %>
+  </div><br>
 <% end %>
