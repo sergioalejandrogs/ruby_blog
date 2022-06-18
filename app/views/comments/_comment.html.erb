@@ -9,11 +9,15 @@
     <%= comment.body %>
   </p>
 
-  <p>
-    <%= link_to "Delete Comment", [comment.article, comment], data: {
-                turbo_method: :delete,
-                turbo_confirm: "Are you sure?"
-              },
-              class: "btn btn-danger" %>
-  </p>
+  <% if user_signed_in? %>
+    <% if current_user.id == comment.user_id %>
+      <p>
+        <%= link_to "Delete Comment", [comment.article, comment], data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  },
+                  class: "btn btn-danger" %>
+      </p>
+    <% end %>
+  <% end %>
 <% end %>
