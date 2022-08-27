@@ -1,24 +1,5 @@
-# README
+# Blog made on Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A deployed version of this blog can be found here: https://dry-river-34819.herokuapp.com/
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a simple blog that allows you to post and to comment other user's posts as long as you are logged in and if you follow them (twitter like feature).
